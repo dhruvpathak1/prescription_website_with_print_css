@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" media="print" href="print.css" />
+</head>
+
+<body>
+
+    <script>
+
+        function one() {
+            var x = document.getElementById("med").value;
+            var y = document.getElementById("meds");
+            var p = document.createElement("p");
+            p.innerHTML = x;
+            y.appendChild(p)
+        }
+
+    </script>
+
+    <div class="paper">
+        <h1>Kunj Dental Clinic</h1>
+        <p>94, Neelkanth Arcade, Sector 22, Kopar Khairane, Navi Mumbai,
+            Maharashtra-400709</p>
+
+        <h3>Dr. Rakesh Pathak</h3>
+        <p>
+            <script> document.write(new Date().toLocaleDateString('en-GB')); </script>
+        </p>
+
+        <hr>
+
+        <div class="patient">
+            <form>
+                <section class="formparts">
+                    <label>Patient Name: </label>
+                    <input type="text">
+                    <br>
+                </section>
+
+
+                <section class="formparts">
+                    <label>Gender: </label>
+                    <select>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                    <br>
+                </section>
+
+            </form>
+        </div>
+
+        <div class="medicines">
+            <h2>Medicines</h2>
+            <div id="meds"></div>
+            <form>
+                <section class="formparts1">
+                    <select id="med" class="med">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <input type="button" value="Add" onclick="one()">
+                </section>
+
+
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

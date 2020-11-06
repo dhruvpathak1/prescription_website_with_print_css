@@ -1,0 +1,31 @@
+.paper {
+  background-color: white;
+  padding: 0em 1em;
+}
+
+.patient {
+  margin: 1em;
+}
+
+.formparts {
+  margin: 0.2em;
+}
+
+@media print {
+  .paper {
+    margin: 1em;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    border: none;
+  }
+
+  .formparts {
+    margin: 0.2em;
+  }
+
+  .formparts1 {
+    display: none;
+  }
+}
