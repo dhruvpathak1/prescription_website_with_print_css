@@ -3,29 +3,150 @@
   padding: 0em 1em;
 }
 
-.patient {
-  margin: 1em;
+.title,
+.app-only,
+.address,
+.timings {
+  text-align: center;
 }
 
-.formparts {
+.title {
   margin: 0.2em;
 }
 
-@media print {
-  .paper {
-    margin: 1em;
-  }
+#name,
+#phone1 {
+  display: inline;
+}
 
-  input[type="text"],
-  input[type="number"] {
+#phone1 {
+  float: right;
+  margin-top: 0;
+}
+
+#degree,
+#phone2 {
+  display: inline;
+}
+
+#degree {
+  padding-left: 3.7em;
+}
+
+#phone2 {
+  float: right;
+  margin-top: 0;
+  margin-right: -6.2em;
+}
+
+#regd {
+  margin: 0 auto 0.5em;
+  padding-left: 3.5em;
+}
+
+.current-date {
+  float: right;
+  margin-top: 0;
+}
+
+.app-only {
+  font-size: small;
+  margin: 0.2em;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.address,
+.timings {
+  margin: 0em;
+  font-size: small;
+}
+
+.timings {
+  padding: 0.5em;
+  border-bottom: 1px solid black;
+  margin-bottom: 0.5em;
+}
+
+#time1,
+#time2 {
+  display: inline;
+}
+
+#time1 {
+  margin-right: 2em;
+}
+
+.patient {
+  margin-top: 1em;
+}
+
+.patient-name,
+.patient-gender,
+.types {
+  padding: 0.5em;
+}
+
+option {
+  border: none;
+}
+
+#med1,
+#med2,
+#med3 {
+  font-size: medium;
+  padding: 0.2em;
+  border: 1px solid black;
+  border-radius: 0.2em;
+}
+
+#delete {
+  background-color: orange;
+  font-size: medium;
+  padding: 0.5em;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 0.5em;
+}
+
+#delete:hover {
+  background-color: orangered;
+}
+
+#add {
+  background-color: rgb(178, 255, 229);
+  font-size: medium;
+  padding: 0.5em;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 0.5em;
+  margin-right: 4em;
+}
+
+#add:hover {
+  background-color: rgb(0, 255, 170);
+}
+
+#gen {
+  display: inline;
+}
+
+input[type="button"] {
+  font-size: medium;
+  padding: 0.5em;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 0.5em;
+  margin-right: 1em;
+}
+
+@media print {
+  input[type="text"] {
     border: none;
   }
 
-  .formparts {
-    margin: 0.2em;
+  .types {
+    display: none;
   }
 
-  .formparts1 {
+  input[type="button"] {
     display: none;
   }
 }
