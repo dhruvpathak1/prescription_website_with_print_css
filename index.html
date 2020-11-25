@@ -4,76 +4,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prescription</title>
+    <title>Prescription Pad</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" media="print" href="print.css" />
+
+    <style>
+        @page {
+            size: auto;
+            margin: 0mm;
+        }
+    </style>
+
 </head>
 
 <body>
 
     <script>
-
+        var id = 1;
         function one() {
-            var x = document.getElementById("med").value;
-            var y = document.getElementById("meds");
-            var p = document.createElement("p");
-            p.innerHTML = x;
-            y.appendChild(p)
+            var x = document.getElementById("med1").value;
+            if (x != "") {
+                id++;
+                console.log(id);
+                var y = document.getElementById("meds");
+                var p = document.createElement("p");
+                p.setAttribute("id", id);
+                p.innerHTML = x;
+                y.appendChild(p)
+            }
+        }
+
+        function two() {
+            var x = document.getElementById("med2").value;
+            if (x != "") {
+                id++;
+                console.log(id);
+                var y = document.getElementById("meds");
+                var p = document.createElement("p");
+                p.setAttribute("id", id);
+                p.innerHTML = x;
+                y.appendChild(p)
+            }
+        }
+
+        function three() {
+            var x = document.getElementById("med3").value;
+            if (x != "") {
+                id++;
+                console.log(id);
+                var y = document.getElementById("meds");
+                var p = document.createElement("p");
+                p.setAttribute("id", id);
+                p.innerHTML = x;
+                y.appendChild(p)
+            }
+        }
+
+        function deleteoption() {
+
+            if (id > 0) {
+                var del = document.getElementById(id);
+                del.remove();
+                id--;
+                console.log(id);
+            }
+            else {
+                id = 1;
+            }
+        }
+
+        function male() {
+            var x = document.getElementById("gen");
+            x.innerHTML = "";
+            x.innerHTML = "Male";
+        }
+
+        function female() {
+            var x = document.getElementById("gen");
+            x.innerHTML = "";
+            x.innerHTML = "Female";
+        }
+
+        function other() {
+            var x = document.getElementById("gen");
+            x.innerHTML = "";
+            x.innerHTML = "Others";
         }
 
     </script>
 
     <div class="paper">
-        <h1>Happy Teeth Dental Clinic</h1>
-        <p>94, Avenue Street, Sector 22, Jordan, NY,
-            USA-0010187</p>
+        <h1 class="title">The Dental Clinic</h1>
 
-        <h3>Dr. John Doe</h3>
-        <p>
+        <div class="clinic-info">
+            <div class="doctor-info-line-1">
+                <h3 id="name">Dr.Logan Sanders</h3>
+                <p id="phone1"><b>Tel: </b>0000 1111</p>
+
+            </div>
+
+            <div class="doctor-info-line-2">
+                <h5 id="degree">B.D.S. (Mumbai)</h5>
+                <p id="phone2">0101 1010</p>
+                <h5 id="regd">Regd. No. XYZ-123X</h5>
+            </div>
+
+            <b>
+                <p class="app-only">TREATMENT BY APPOINTMENT ONLY</p>
+            </b>
+
+            <div class="timings">
+
+                <p class="address">Shop No. 4, Mario Arcade,Block 41, Sector 22, 5th Avenue, NYC, NY.</p>
+                <p id="time1">Morning: 10:00am - 1:00pm</p>
+                <p id="time2">Evening: 5:30pm - 9:00pm</p>
+            </div>
+
+        </div>
+
+        <p class="current-date">
+            <b>Date: </b>
             <script> document.write(new Date().toLocaleDateString('en-GB')); </script>
         </p>
 
-        <hr>
-
         <div class="patient">
             <form>
-                <section class="formparts">
-                    <label>Patient Name: </label>
+                <section class="patient-name">
+                    <label>Patient: </label>
                     <input type="text">
-                    <br>
                 </section>
 
-
-                <section class="formparts">
+                <section class="patient-gender">
                     <label>Gender: </label>
-                    <select>
-                        <option>Male</option>
-                        <option>Female</option>
-                    </select>
-                    <br>
+                    <input type="button" onclick="male()" value="Male">
+                    <input type="button" onclick="female()" value="Female">
+                    <input type="button" onclick="other()" value="Others">
+                    <p id="gen"></p>
                 </section>
-
             </form>
         </div>
 
         <div class="medicines">
-            <h2>Medicines</h2>
-            <div id="meds"></div>
             <form>
-                <section class="formparts1">
-                    <select id="med" class="med">
+                <section class="types">
+                    <select id="med1" class="med1">
+                        <option value="" selected disabled>Type 1</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
-                    <input type="button" value="Add" onclick="one()">
+                    <input type="button" value="Add" id="add" onclick="one()">
+
+                    <select id="med2" class="med2">
+                        <option value="" selected disabled>Type 2</option>
+                        <option value="1a">1a</option>
+                        <option value="2b">1b</option>
+                        <option value="3c">1c</option>
+                        <option value="4d">1d</option>
+                    </select>
+                    <input type="button" value="Add" id="add" onclick="two()">
+
+                    <select id="med3" class="med3">
+                        <option value="" selected disabled>Type 3</option>
+                        <option value="12">12</option>
+                        <option value="23">23</option>
+                        <option value="34">34</option>
+                        <option value="45">45</option>
+                    </select>
+                    <input type="button" value="Add" id="add" onclick="three()">
+
+                    <input type="button" value="Delete" id="delete" onclick="deleteoption()">
+
                 </section>
 
-
+                <div id="meds"></div>
             </form>
         </div>
-
+        <div class="sign">
+            <h5>Signature:</h5>
+        </div>
     </div>
 
 </body>
