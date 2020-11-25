@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
 .paper {
   background-color: white;
   padding: 0em 1em;
+  font-family: "Open Sans", sans-serif;
 }
 
 .title,
@@ -36,7 +39,7 @@
 #phone2 {
   float: right;
   margin-top: 0;
-  margin-right: -6.2em;
+  margin-right: -6.7em;
 }
 
 #regd {
