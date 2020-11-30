@@ -18,13 +18,20 @@
 }
 
 #name,
-#phone1 {
+#phone1,
+#email {
   display: inline;
 }
 
 #phone1 {
   float: right;
   margin-top: 0;
+}
+
+#email {
+  float: right;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #degree,
@@ -32,19 +39,16 @@
   display: inline;
 }
 
-#degree {
-  padding-left: 3.7em;
-}
-
 #phone2 {
   float: right;
   margin-top: 0;
-  margin-right: -6.7em;
+  margin-bottom: 0;
+  margin-right: -6.8em;
 }
 
 #regd {
   margin: 0 auto 0.5em;
-  padding-left: 3.5em;
+  display: inline;
 }
 
 .current-date {
@@ -140,9 +144,20 @@ input[type="button"] {
   margin-right: 1em;
 }
 
+input[type="text"] {
+  font-size: medium;
+  padding: 0.5em;
+}
+
+.lines {
+  margin: 0;
+  padding: 0;
+}
+
 @media print {
   input[type="text"] {
     border: none;
+    padding: 0;
   }
 
   .types {
