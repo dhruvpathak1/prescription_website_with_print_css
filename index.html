@@ -7,6 +7,7 @@
     <title>Prescription Pad</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" media="print" href="print.css" />
+    <link rel="shortcut icon" type="image" href="icon.jpg">
 
     <style>
         @page {
@@ -23,7 +24,6 @@
             var x = document.getElementById("med1").value;
             if (x != "") {
                 id++;
-                console.log(id);
                 var y = document.getElementById("meds");
                 var p = document.createElement("p");
                 p.setAttribute("id", id);
@@ -36,7 +36,6 @@
             var x = document.getElementById("med2").value;
             if (x != "") {
                 id++;
-                console.log(id);
                 var y = document.getElementById("meds");
                 var p = document.createElement("p");
                 p.setAttribute("id", id);
@@ -49,7 +48,42 @@
             var x = document.getElementById("med3").value;
             if (x != "") {
                 id++;
-                console.log(id);
+                var y = document.getElementById("meds");
+                var p = document.createElement("p");
+                p.setAttribute("id", id);
+                p.innerHTML = x;
+                y.appendChild(p)
+            }
+        }
+
+        function four() {
+            var x = document.getElementById("med4").value;
+            if (x != "") {
+                id++;
+                var y = document.getElementById("meds");
+                var p = document.createElement("p");
+                p.setAttribute("id", id);
+                p.innerHTML = x;
+                y.appendChild(p)
+            }
+        }
+
+        function five() {
+            var x = document.getElementById("med5").value;
+            if (x != "") {
+                id++;
+                var y = document.getElementById("meds");
+                var p = document.createElement("p");
+                p.setAttribute("id", id);
+                p.innerHTML = x;
+                y.appendChild(p)
+            }
+        }
+
+        function six() {
+            var x = document.getElementById("med6").value;
+            if (x != "") {
+                id++;
                 var y = document.getElementById("meds");
                 var p = document.createElement("p");
                 p.setAttribute("id", id);
@@ -64,7 +98,6 @@
                 var del = document.getElementById(id);
                 del.remove();
                 id--;
-                console.log(id);
             }
             else {
                 id = 1;
@@ -150,31 +183,87 @@
             <form>
                 <section class="types">
                     <select id="med1" class="med1">
-                        <option value="" selected disabled>Type 1</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <option value="" selected disabled>Antibiotics</option>
+                        <option value="AXL (250mg)">AXL (250mg)</option>
+                        <option value="AUGMENTIN (375mg)">AUGMENTIN (375mg)</option>
+                        <option value="AUGMENTIN (625mg)">AUGMENTIN (625mg)</option>
+                        <option value="TOPCEF (200mg)">TOPCEF (200mg)</option>
+                        <option value="CIPLOX (250mg)">CIPLOX (250mg)</option>
+                        <option value="CIPLOX (500mg)">CIPLOX (500mg)</option>
+                        <option value="DOXY (100mg)">DOXY (100mg)</option>
+                        <option value="CIPLOX TZ">CIPLOX TZ</option>
+                        <option value="METROCYL (400mg)">METROCYL (400mg)</option>
+                        <option value="SEFDIN (300mg)">SEFDIN (300mg)</option>
+                        <option value="SPORIDEX CV (375mg)">SPORIDEX CV (375mg)</option>
+                        <option value="SPORIDEX CV (750mg)">SPORIDEX CV (750mg)</option>
+                        <option value="MOXIKIND CV (375mg)">MOXIKIND CV (375mg)</option>
+                        <option value="MOXIKIND CV (625mg)">MOXIKIND CV (625mg)</option>
+                        <option value="CAP MOX (250mg)">CAP MOX (250mg)</option>
+                        <option value="CAP MOX (500mg)">CAP MOX (500mg)</option>
                     </select>
                     <input type="button" value="Add" id="add" onclick="one()">
 
                     <select id="med2" class="med2">
-                        <option value="" selected disabled>Type 2</option>
-                        <option value="1a">1a</option>
-                        <option value="2b">1b</option>
-                        <option value="3c">1c</option>
-                        <option value="4d">1d</option>
+                        <option value="" selected disabled>Painkillers</option>
+                        <option value="Tab FLEXON">Tab FLEXON</option>
+                        <option value="Tab ENZOFLAM">Tab ENZOFLAM</option>
+                        <option value="Tab VOVERSNSR (100mg)">Tab VOVERSNSR (100mg)</option>
+                        <option value="Tab ULTRACET">Tab ULTRACET</option>
+                        <option value="Tab FLAMAR">Tab FLAMAR</option>
+                        <option value="Tab KETAROL">Tab KETAROL</option>
+                        <option value="Tab MYOTOP">Tab MYOTOP</option>
+                        <option value="Tab MYOTOP MR">Tab MYOTOP MR</option>
+                        <option value="Tab MYOSPAS FORTE">Tab MYOSPAS FORTE</option>
+                        <option value="Tab ESPIDASE-P (10mg)">Tab ESPIDASE-P (10mg)</option>
+                        <option value="Tab DOLO (650mg)">Tab DOLO (650mg)</option>
                     </select>
                     <input type="button" value="Add" id="add" onclick="two()">
 
                     <select id="med3" class="med3">
-                        <option value="" selected disabled>Type 3</option>
-                        <option value="12">12</option>
-                        <option value="23">23</option>
-                        <option value="34">34</option>
-                        <option value="45">45</option>
+                        <option value="" selected disabled>Gum paint</option>
+                        <option value="STOLIN">STOLIN</option>
+                        <option value="METROHEX">METROHEX</option>
+                        <option value="REXIDINE-M-FORTE GEL">REXIDINE-M-FORTE GEL</option>
+                        <option value="CAZIQ">CAZIQ</option>
+                        <option value="DOLOGEL-CT">DOLOGEL-CT</option>
+                        <option value="DENTOGEL-CT">DENTOGEL-CT</option>
                     </select>
                     <input type="button" value="Add" id="add" onclick="three()">
+
+                    <br /><br />
+
+                    <select id="med4" class="med4">
+                        <option value="" selected disabled>Toothpaste</option>
+                        <option value="VANTET">VANTET</option>
+                        <option value="SENQUEL F">SENQUEL F</option>
+                        <option value="THEMOSEAL">THEMOSEAL</option>
+                        <option value="SENOLIN SF">SENOLIN SF</option>
+                        <option value="STOLIN R">STOLIN R</option>
+                        <option value="ENAFIX">ENAFIX</option>
+                        <option value="ELSENZ">ELSENZ</option>
+                        <option value="SENSODYNE Repair & Protect">SENSODYNE Repair &amp; Protect</option>
+                        <option value="SENSODYNE KF">SENSODYNE KF</option>
+                        <option value="SENSOFORM">SENSOFORM</option>
+                    </select>
+                    <input type="button" value="Add" id="add" onclick="four()">
+
+                    <select id="med5" class="med5">
+                        <option value="" selected disabled>Miscellaneous</option>
+                        <option value="Tab SM FIBRO">Tab SM FIBRO</option>
+                        <option value="Tab UPRISE D3 60 KUNL">Tab UPRISE D3 60 KUNL</option>
+                        <option value="Tab ELMECOB">Tab ELMECOB</option>
+                        <option value="Tab RINIFOL">Tab RINIFOL</option>
+                        <option value="Tab VIBELON FORTE">Tab VIBELON FORTE</option>
+                        <option value="Tab A-Z">Tab A-Z</option>
+                        <option value="Tab NEUROBION FORTE">Tab NEUROBION FORTE</option>
+                        <option value="TAB PAN-D (40mg)">TAB PAN-D (40mg)</option>
+                        <option value="Tab ZAP">Tab ZAP</option>
+                        <option value="Tab OMEZ">Tab OMEZ</option>
+                    </select>
+                    <input type="button" value="Add" id="add" onclick="five()">
+
+                    <input type="text" id="med6" placeholder="Extra" />
+                    <input type="button" value="Add" id="add" onclick="six()">
 
                     <input type="button" value="Delete" id="delete" onclick="deleteoption()">
 
@@ -184,6 +273,7 @@
             </form>
         </div>
         <div class="sign">
+            <hr>
             <h5>Signature:</h5>
         </div>
     </div>
