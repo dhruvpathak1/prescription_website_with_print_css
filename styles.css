@@ -100,7 +100,10 @@ option {
 
 #med1,
 #med2,
-#med3 {
+#med3,
+#med4,
+#med5,
+#med6 {
   font-size: medium;
   padding: 0.2em;
   border: 1px solid black;
@@ -125,7 +128,7 @@ option {
   padding: 0.5em;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 0.5em;
-  margin-right: 4em;
+  margin-right: 2.5em;
 }
 
 #add:hover {
@@ -154,6 +157,13 @@ input[type="text"] {
   padding: 0;
 }
 
+.sign {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+}
+
 @media print {
   input[type="text"] {
     border: none;
@@ -166,5 +176,9 @@ input[type="text"] {
 
   input[type="button"] {
     display: none;
+  }
+
+  .sign {
+    display: block;
   }
 }
