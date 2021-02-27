@@ -20,15 +20,19 @@
 <body>
     <script>
         var id = 1;
+        var items = [];
         function one() {
             var x = document.getElementById("med1").value;
             if (x != "") {
                 id++;
                 var y = document.getElementById("meds");
                 var p = document.createElement("p");
+                var bkl = document.createElement("br");
                 p.setAttribute("id", id);
                 p.innerHTML = x;
                 y.appendChild(p)
+                items.push(x)
+
             }
         }
 
@@ -38,9 +42,12 @@
                 id++;
                 var y = document.getElementById("meds");
                 var p = document.createElement("p");
+                var bkl = document.createElement("br");
                 p.setAttribute("id", id);
                 p.innerHTML = x;
                 y.appendChild(p)
+                items.push(x)
+
             }
         }
 
@@ -50,9 +57,12 @@
                 id++;
                 var y = document.getElementById("meds");
                 var p = document.createElement("p");
+                var bkl = document.createElement("br");
                 p.setAttribute("id", id);
                 p.innerHTML = x;
                 y.appendChild(p)
+                items.push(x)
+
             }
         }
 
@@ -62,9 +72,12 @@
                 id++;
                 var y = document.getElementById("meds");
                 var p = document.createElement("p");
+                var bkl = document.createElement("br");
                 p.setAttribute("id", id);
                 p.innerHTML = x;
                 y.appendChild(p)
+                items.push(x)
+
             }
         }
 
@@ -74,9 +87,12 @@
                 id++;
                 var y = document.getElementById("meds");
                 var p = document.createElement("p");
+                var bkl = document.createElement("br");
                 p.setAttribute("id", id);
                 p.innerHTML = x;
                 y.appendChild(p)
+                items.push(x)
+
             }
         }
 
@@ -86,9 +102,12 @@
                 id++;
                 var y = document.getElementById("meds");
                 var p = document.createElement("p");
+                var bkl = document.createElement("br");
                 p.setAttribute("id", id);
                 p.innerHTML = x;
                 y.appendChild(p)
+                items.push(x)
+
             }
         }
 
@@ -98,6 +117,7 @@
                 var del = document.getElementById(id);
                 del.remove();
                 id--;
+                items.pop()
             }
             else {
                 id = 1;
@@ -122,26 +142,45 @@
             x.innerHTML = "Others";
         }
 
+        function prepareprint() {
+            var len = items.length
+            var space = parseInt(100 / len)
+            var height = space.toString() + "%"
+            console.log(height)
+            for (i = 0; i < len; i++) {
+                var y = document.getElementById("printing");
+                var p = document.createElement("p");
+                p.innerHTML = items[i];
+                p.style.height = height
+                y.appendChild(p)
+            }
+            var myobj = document.getElementById("meds");
+            myobj.remove();
+            window.print();
+            window.location.reload()
+        }
+
     </script>
 
     <div class="paper">
-        <h1 class="title">Dental Clinic</h1>
+        <h1 class="title">Kunj Dental Clinic</h1>
+        <h6 class="title">www.kunjdentalclinic.com</h6>
 
         <div class="clinic-info">
             <div class="doctor-info-line-1">
-                <h3 id="name">Dr. John A Devlin</h3>
-                <p id="phone1"><b>Tel: </b>0000 0000</p>
+                <h3 id="name">Dr.Rakesh Pathak</h3>
+                <p id="phone1"><b>Tel: </b>2754 3062</p>
             </div>
 
             <div class="doctor-info-line-2">
-                <h5 id="degree">B.D.S. (Florida)</h5>
-                <p id="phone2"> 1111 1111</p>
+                <h5 id="degree">B.D.S. (Mumbai)</h5>
+                <p id="phone2">22355 63708</p>
 
             </div>
 
             <div class="doctor-info-line-3">
-                <h5 id="regd">Regd. No. 1-XXXX</h5>
-                <p id="email"><b>Email: </b>info@dentalclinic.com</p>
+                <h5 id="regd">Regd. No. A-7189</h5>
+                <p id="email"><b>Email: </b>contactkunjdental@gmail.com</p>
             </div>
 
             <b>
@@ -150,7 +189,8 @@
 
             <div class="timings">
 
-                <p class="address">2266  Monroe Avenue, Bradenton, Florida, 34207.</p>
+                <p class="address">Shop No. 4, Neelkanth Arcade,Plot No. 94, Sector 22, Kopar Khairane, Navi
+                    Mumbai,Maharashtra-400709.</p>
                 <p id="time1">Morning : 10:00am - 1:00pm</p>
                 <p id="time2">Evening : 5:30pm - 9:00pm</p>
             </div>
@@ -175,6 +215,7 @@
                     <input type="button" onclick="female()" value="Female">
                     <input type="button" onclick="other()" value="Others">
                     <p id="gen"></p>
+                    <br><br>
                 </section>
             </form>
         </div>
@@ -266,15 +307,16 @@
                     <input type="button" value="Add" id="add" onclick="six()">
 
                     <input type="button" value="Delete" id="delete" onclick="deleteoption()">
+                    <input type="button" value="Print" id="print" onclick="prepareprint()">
 
                 </section>
 
                 <div id="meds"></div>
+                <div id="printing"></div>
             </form>
         </div>
         <div class="sign">
-            <hr>
-            <h5>Signature:</h5>
+            <h5 class="signh5">Signature:</h5>
         </div>
     </div>
 
