@@ -186,7 +186,7 @@ input[type="text"] {
 }
 
 #printing {
-  height: 65vh;
+  height: 63vh;
 }
 
 @media print {
