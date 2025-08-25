@@ -1,18 +1,14 @@
-# prescription_website_with_print_css
 
-Presciption Pad local webpage used to make a presciption and to print it with CSS altered for adjustments of the printing page.
-### Programming Language : HTML. CSS, JS
+### **Project Description**
 
-The page contains the following sections :
-1. Header
-2. Footer
-3. Gender
-4. Multiple Medicine Lists
-5. Delete
-6. Print
+This project is a local web page for generating and printing medical prescriptions. The primary function of the website is to format prescription details for easy printing, with a key feature being the use of **Print CSS** to ensure that the output is properly spaced and fits correctly on a single page. The page supports a variety of prescription elements, including a header, footer, patient gender selection, and the ability to add and delete multiple medicine entries. After printing, the page automatically refreshes to prepare for the next patient's prescription, streamlining the workflow.
 
-Output :
-All medicines are equally spaced in one page (Limited to 8 medicines on each page only)
-Printing will also lead to refreshing of the page to start making the presciption of the next patient.
+### **Technical Stack**
+* **HTML**: Provides the structure and content of the web page.
+* **CSS**: Styles the page and, most importantly, uses the `@media print { }` rule to apply specific formatting for printing, ensuring an optimized layout.
+* **JavaScript**: Manages dynamic functionalities, such as adding and deleting medicine lists, as well as refreshing the page after the print action is triggered.
 
-( Using @media print { } to alter CSS on print )
+### **Key Features**
+* **Print Optimization**: The CSS is specifically designed to handle printing, ensuring that all medicine entries are equally spaced and limited to eight per page to maintain a clean and readable format.
+* **Dynamic Content**: Users can dynamically add and remove medicine entries, providing flexibility for different prescription needs.
+* **Automated Workflow**: The page refreshes automatically after printing, simplifying the process for creating sequential prescriptions.
